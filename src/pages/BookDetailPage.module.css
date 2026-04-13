@@ -1,0 +1,192 @@
+.breadcrumb {
+  background: var(--cream);
+  border-bottom: 1px solid var(--border);
+  padding: .75rem 0;
+}
+.bcLink {
+  font-size: .88rem;
+  color: var(--ink-light);
+  transition: color var(--transition);
+}
+.bcLink:hover { color: var(--accent); }
+
+.detail {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 3rem;
+  padding: 3rem 0 4rem;
+  align-items: start;
+}
+
+/* ── Cover column ─────────────────────────────────────────── */
+.coverCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  position: sticky;
+  top: 80px;
+}
+
+.coverFrame {
+  width: 100%;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  background: var(--cream);
+  aspect-ratio: 2/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cover { width: 100%; height: 100%; object-fit: cover; display: block; }
+.noCover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+  color: var(--ink-light);
+  font-size: .9rem;
+}
+.noCover span { font-size: 3rem; }
+
+.cta {
+  width: 100%;
+  padding: .85rem 1rem;
+  background: var(--green);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: .95rem;
+  font-weight: 600;
+  transition: background var(--transition), transform var(--transition);
+  letter-spacing: .02em;
+}
+.cta:hover  { background: #155534; transform: translateY(-1px); }
+.ctaSaved   { background: var(--ink); }
+.ctaSaved:hover { background: var(--accent); }
+
+.viewList {
+  font-size: .85rem;
+  color: var(--green);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.viewList:hover { color: var(--accent); }
+
+/* ── Meta column ──────────────────────────────────────────── */
+.metaCol { display: flex; flex-direction: column; gap: 1.25rem; }
+
+.title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 900;
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+.authorLine, .metaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  align-items: baseline;
+  font-size: .95rem;
+}
+.metaLabel {
+  font-size: .75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--ink-light);
+  min-width: 110px;
+}
+.authorName {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--accent);
+}
+
+.desc {
+  border-left: 3px solid var(--gold);
+  padding-left: 1.1rem;
+}
+.descTitle {
+  font-size: .8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--ink-light);
+  margin-bottom: .5rem;
+}
+.desc p {
+  color: var(--ink-light);
+  line-height: 1.75;
+  font-size: .97rem;
+}
+
+.subjects {}
+.subjectsTitle {
+  font-size: .8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--ink-light);
+  margin-bottom: .6rem;
+}
+.tagList { display: flex; flex-wrap: wrap; gap: .4rem; }
+.tag {
+  padding: .28rem .75rem;
+  background: var(--gold-lt);
+  color: var(--gold);
+  border-radius: 999px;
+  font-size: .78rem;
+  font-weight: 500;
+  border: 1px solid #e0c882;
+}
+
+.links {}
+.extLink {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  font-size: .88rem;
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.extLink:hover { color: var(--accent-dk); }
+
+/* ── Toast ────────────────────────────────────────────────── */
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--ink);
+  color: var(--parchment);
+  padding: .75rem 1.5rem;
+  border-radius: 999px;
+  font-size: .9rem;
+  box-shadow: var(--shadow-lg);
+  z-index: 999;
+  animation: fadeUp .3s ease;
+  white-space: nowrap;
+  max-width: 90vw;
+  text-align: center;
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .detail {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1.5rem 0 3rem;
+  }
+  .coverCol {
+    position: static;
+    max-width: 240px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
